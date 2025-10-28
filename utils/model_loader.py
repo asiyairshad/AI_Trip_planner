@@ -19,7 +19,7 @@ class ConfigLoader:
 
 
 class ModelLoader(BaseModel):
-    model_provider: Literal["groq", "openai"] = "groq"
+    model_provider:Literal["groq", "openai"] = "groq"
     config:Optional[ConfigLoader] = Field (default = None, exclude = True)
 
     def model_post_init(self, __context:Any) -> None:
@@ -49,8 +49,4 @@ class ModelLoader(BaseModel):
             raise ValueError(f"Unsupported model provider: {self.model_provider}")
         
         return llm
-    def __init__(self, config):
-        self.config = config
-
-    def load_model(self):
-        pass
+   
