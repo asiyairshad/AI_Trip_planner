@@ -4,7 +4,6 @@ from typing import List
 def get_requirements() -> List[str]:
     '''This function reads the requirements.txt file and returns a list of dependencies.'''
 
-
     requirement_list:List[str] = []
 
     try:
