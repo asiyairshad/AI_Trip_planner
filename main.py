@@ -24,6 +24,7 @@ async def query_travel_agent(query:QueryRequest):
 
         # Assuming request is a pydantic object like: {"question": "your text"}
         messages={"messages": [query.question]}
+        
         output = react_app.invoke(messages)
 
         # If result is dict with messages:
@@ -35,3 +36,4 @@ async def query_travel_agent(query:QueryRequest):
         return {"answer": final_output}
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+    return [get_current_weather, get_weather_forecast]

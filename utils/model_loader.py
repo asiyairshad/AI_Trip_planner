@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from typing import litral, Optional, Any
+from typing import Literal, Optional, Any
 from pydantic import BaseModel, Field
 from utils.config_loader import load_config
 from langchain_groq import ChatGroq
